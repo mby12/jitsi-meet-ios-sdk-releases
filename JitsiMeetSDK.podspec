@@ -12,4 +12,10 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'Frameworks/JitsiMeetSDK.xcframework'
   s.dependency 'Giphy', '2.1.20'
   s.dependency 'JitsiWebRTC', '~> 111.0'
+
+  s.platform         = :ios, '11.0'
+  
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+
 end
